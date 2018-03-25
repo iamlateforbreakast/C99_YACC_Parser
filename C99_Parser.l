@@ -176,8 +176,6 @@ int check_type(void)
 /*
 *	it actually will only return IDENTIFIER
 */
-        char* res = malloc(strlen(yytext)+1);
-        strcpy(res, yytext);
-        yylval.sval = res;
+        Declarator_setName(yytext);
 	return IDENTIFIER;
 }

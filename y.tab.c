@@ -1884,9 +1884,9 @@ yyreduce:
 #line 1885 "y.tab.c" /* yacc.c:1646  */
     break;
 
-  case 112:
-#line 222 "C99_Parser.y" /* yacc.c:1646  */
-    { printf("Hello\n");}
+  case 115:
+#line 228 "C99_Parser.y" /* yacc.c:1646  */
+    { Declarator_setState(1); }
 #line 1891 "y.tab.c" /* yacc.c:1646  */
     break;
 

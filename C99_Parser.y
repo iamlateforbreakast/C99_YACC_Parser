@@ -219,13 +219,13 @@ type_specifier
 	;
 
 struct_or_union_specifier
-	: struct_or_union IDENTIFIER '{' struct_declaration_list '}' { printf("Hello\n");}
+	: struct_or_union IDENTIFIER '{' struct_declaration_list '}'
 	| struct_or_union '{' struct_declaration_list '}'
 	| struct_or_union IDENTIFIER
 	;
 
 struct_or_union
-	: STRUCT
+	: STRUCT { Declarator_setState(1); }
 	| UNION
 	;
 
