@@ -1,7 +1,15 @@
 %{
+#include "Declarator.h"
+extern char yytext[];
 void yyerror(const char *s);
 int yylex(void);
 %}
+
+%union {
+  char* sval;
+};
+
+%type <sval> IDENTIFIER
 
 %token IDENTIFIER CONSTANT STRING_LITERAL SIZEOF
 %token PTR_OP INC_OP DEC_OP LEFT_OP RIGHT_OP LE_OP GE_OP EQ_OP NE_OP
@@ -185,7 +193,7 @@ init_declarator
 	;
 
 storage_class_specifier
-	: TYPEDEF
+	: TYPEDEF { declarator.type = 1; }
 	| EXTERN
 	| STATIC
 	| AUTO
@@ -283,7 +291,7 @@ declarator
 
 
 direct_declarator
-	: IDENTIFIER
+	: IDENTIFIER { printf("IDENTIFIER: %s\n", $1);}
 	| '(' declarator ')'
 	| direct_declarator '[' type_qualifier_list assignment_expression ']'
 	| direct_declarator '[' type_qualifier_list ']'
@@ -448,8 +456,8 @@ translation_unit
 	;
 
 external_declaration
-	: function_definition
-	| declaration
+	: function_definition { printf("Function definition\n"); }
+	| declaration { printf("Declaration\n"); }
 	;
 
 function_definition
@@ -466,7 +474,6 @@ declaration_list
 %%
 #include <stdio.h>
 
-extern char yytext[];
 extern int column;
 
 void yyerror(char const *s)

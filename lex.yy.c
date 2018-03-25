@@ -692,8 +692,9 @@ char *yytext;
 #line 1 "C99_Parser.l"
 #line 10 "C99_Parser.l"
 #include <stdio.h>
+#include "Declarator.h"
 #include "y.tab.h"
-#line 697 "lex.yy.c"
+#line 698 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -911,9 +912,9 @@ YY_DECL
 		}
 
 	{
-#line 14 "C99_Parser.l"
+#line 15 "C99_Parser.l"
 
-#line 917 "lex.yy.c"
+#line 918 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -972,506 +973,506 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 15 "C99_Parser.l"
+#line 16 "C99_Parser.l"
 { comment(); }
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 16 "C99_Parser.l"
+#line 17 "C99_Parser.l"
 { /* consume //-comment */ }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 19 "C99_Parser.l"
+#line 20 "C99_Parser.l"
 { count(); return(AUTO); }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 20 "C99_Parser.l"
+#line 21 "C99_Parser.l"
 { count(); return(BOOL); }
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 21 "C99_Parser.l"
+#line 22 "C99_Parser.l"
 { count(); return(BREAK); }
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 22 "C99_Parser.l"
+#line 23 "C99_Parser.l"
 { count(); return(CASE); }
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 23 "C99_Parser.l"
+#line 24 "C99_Parser.l"
 { count(); return(CHAR); }
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 24 "C99_Parser.l"
+#line 25 "C99_Parser.l"
 { count(); return(COMPLEX); }
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 25 "C99_Parser.l"
+#line 26 "C99_Parser.l"
 { count(); return(CONST); }
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 26 "C99_Parser.l"
+#line 27 "C99_Parser.l"
 { count(); return(CONTINUE); }
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 27 "C99_Parser.l"
+#line 28 "C99_Parser.l"
 { count(); return(DEFAULT); }
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 28 "C99_Parser.l"
+#line 29 "C99_Parser.l"
 { count(); return(DO); }
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 29 "C99_Parser.l"
+#line 30 "C99_Parser.l"
 { count(); return(DOUBLE); }
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 30 "C99_Parser.l"
+#line 31 "C99_Parser.l"
 { count(); return(ELSE); }
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 31 "C99_Parser.l"
+#line 32 "C99_Parser.l"
 { count(); return(ENUM); }
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 32 "C99_Parser.l"
+#line 33 "C99_Parser.l"
 { count(); return(EXTERN); }
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 33 "C99_Parser.l"
+#line 34 "C99_Parser.l"
 { count(); return(FLOAT); }
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 34 "C99_Parser.l"
+#line 35 "C99_Parser.l"
 { count(); return(FOR); }
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 35 "C99_Parser.l"
+#line 36 "C99_Parser.l"
 { count(); return(GOTO); }
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 36 "C99_Parser.l"
+#line 37 "C99_Parser.l"
 { count(); return(IF); }
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 37 "C99_Parser.l"
+#line 38 "C99_Parser.l"
 { count(); return(IMAGINARY); }
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 38 "C99_Parser.l"
+#line 39 "C99_Parser.l"
 { count(); return(INLINE); }
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 39 "C99_Parser.l"
+#line 40 "C99_Parser.l"
 { count(); return(INT); }
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
-#line 40 "C99_Parser.l"
+#line 41 "C99_Parser.l"
 { count(); return(LONG); }
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 41 "C99_Parser.l"
+#line 42 "C99_Parser.l"
 { count(); return(REGISTER); }
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 42 "C99_Parser.l"
+#line 43 "C99_Parser.l"
 { count(); return(RESTRICT); }
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
-#line 43 "C99_Parser.l"
+#line 44 "C99_Parser.l"
 { count(); return(RETURN); }
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
-#line 44 "C99_Parser.l"
+#line 45 "C99_Parser.l"
 { count(); return(SHORT); }
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
-#line 45 "C99_Parser.l"
+#line 46 "C99_Parser.l"
 { count(); return(SIGNED); }
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
-#line 46 "C99_Parser.l"
+#line 47 "C99_Parser.l"
 { count(); return(SIZEOF); }
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
-#line 47 "C99_Parser.l"
+#line 48 "C99_Parser.l"
 { count(); return(STATIC); }
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
-#line 48 "C99_Parser.l"
+#line 49 "C99_Parser.l"
 { count(); return(STRUCT); }
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
-#line 49 "C99_Parser.l"
+#line 50 "C99_Parser.l"
 { count(); return(SWITCH); }
 	YY_BREAK
 case 34:
 YY_RULE_SETUP
-#line 50 "C99_Parser.l"
+#line 51 "C99_Parser.l"
 { count(); return(TYPEDEF); }
 	YY_BREAK
 case 35:
 YY_RULE_SETUP
-#line 51 "C99_Parser.l"
+#line 52 "C99_Parser.l"
 { count(); return(UNION); }
 	YY_BREAK
 case 36:
 YY_RULE_SETUP
-#line 52 "C99_Parser.l"
+#line 53 "C99_Parser.l"
 { count(); return(UNSIGNED); }
 	YY_BREAK
 case 37:
 YY_RULE_SETUP
-#line 53 "C99_Parser.l"
+#line 54 "C99_Parser.l"
 { count(); return(VOID); }
 	YY_BREAK
 case 38:
 YY_RULE_SETUP
-#line 54 "C99_Parser.l"
+#line 55 "C99_Parser.l"
 { count(); return(VOLATILE); }
 	YY_BREAK
 case 39:
 YY_RULE_SETUP
-#line 55 "C99_Parser.l"
+#line 56 "C99_Parser.l"
 { count(); return(WHILE); }
 	YY_BREAK
 case 40:
 YY_RULE_SETUP
-#line 57 "C99_Parser.l"
+#line 58 "C99_Parser.l"
 { count(); return(check_type()); }
 	YY_BREAK
 case 41:
 YY_RULE_SETUP
-#line 59 "C99_Parser.l"
+#line 60 "C99_Parser.l"
 { count(); return(CONSTANT); }
 	YY_BREAK
 case 42:
 YY_RULE_SETUP
-#line 60 "C99_Parser.l"
+#line 61 "C99_Parser.l"
 { count(); return(CONSTANT); }
 	YY_BREAK
 case 43:
 YY_RULE_SETUP
-#line 61 "C99_Parser.l"
+#line 62 "C99_Parser.l"
 { count(); return(CONSTANT); }
 	YY_BREAK
 case 44:
 YY_RULE_SETUP
-#line 62 "C99_Parser.l"
+#line 63 "C99_Parser.l"
 { count(); return(CONSTANT); }
 	YY_BREAK
 case 45:
 YY_RULE_SETUP
-#line 64 "C99_Parser.l"
+#line 65 "C99_Parser.l"
 { count(); return(CONSTANT); }
 	YY_BREAK
 case 46:
 YY_RULE_SETUP
-#line 65 "C99_Parser.l"
+#line 66 "C99_Parser.l"
 { count(); return(CONSTANT); }
 	YY_BREAK
 case 47:
 YY_RULE_SETUP
-#line 66 "C99_Parser.l"
+#line 67 "C99_Parser.l"
 { count(); return(CONSTANT); }
 	YY_BREAK
 case 48:
 YY_RULE_SETUP
-#line 67 "C99_Parser.l"
+#line 68 "C99_Parser.l"
 { count(); return(CONSTANT); }
 	YY_BREAK
 case 49:
 YY_RULE_SETUP
-#line 68 "C99_Parser.l"
+#line 69 "C99_Parser.l"
 { count(); return(CONSTANT); }
 	YY_BREAK
 case 50:
 YY_RULE_SETUP
-#line 69 "C99_Parser.l"
+#line 70 "C99_Parser.l"
 { count(); return(CONSTANT); }
 	YY_BREAK
 case 51:
 YY_RULE_SETUP
-#line 72 "C99_Parser.l"
+#line 73 "C99_Parser.l"
 { count(); return(STRING_LITERAL); }
 	YY_BREAK
 case 52:
 YY_RULE_SETUP
-#line 74 "C99_Parser.l"
+#line 75 "C99_Parser.l"
 { count(); return(ELLIPSIS); }
 	YY_BREAK
 case 53:
 YY_RULE_SETUP
-#line 75 "C99_Parser.l"
+#line 76 "C99_Parser.l"
 { count(); return(RIGHT_ASSIGN); }
 	YY_BREAK
 case 54:
 YY_RULE_SETUP
-#line 76 "C99_Parser.l"
+#line 77 "C99_Parser.l"
 { count(); return(LEFT_ASSIGN); }
 	YY_BREAK
 case 55:
 YY_RULE_SETUP
-#line 77 "C99_Parser.l"
+#line 78 "C99_Parser.l"
 { count(); return(ADD_ASSIGN); }
 	YY_BREAK
 case 56:
 YY_RULE_SETUP
-#line 78 "C99_Parser.l"
+#line 79 "C99_Parser.l"
 { count(); return(SUB_ASSIGN); }
 	YY_BREAK
 case 57:
 YY_RULE_SETUP
-#line 79 "C99_Parser.l"
+#line 80 "C99_Parser.l"
 { count(); return(MUL_ASSIGN); }
 	YY_BREAK
 case 58:
 YY_RULE_SETUP
-#line 80 "C99_Parser.l"
+#line 81 "C99_Parser.l"
 { count(); return(DIV_ASSIGN); }
 	YY_BREAK
 case 59:
 YY_RULE_SETUP
-#line 81 "C99_Parser.l"
+#line 82 "C99_Parser.l"
 { count(); return(MOD_ASSIGN); }
 	YY_BREAK
 case 60:
 YY_RULE_SETUP
-#line 82 "C99_Parser.l"
+#line 83 "C99_Parser.l"
 { count(); return(AND_ASSIGN); }
 	YY_BREAK
 case 61:
 YY_RULE_SETUP
-#line 83 "C99_Parser.l"
+#line 84 "C99_Parser.l"
 { count(); return(XOR_ASSIGN); }
 	YY_BREAK
 case 62:
 YY_RULE_SETUP
-#line 84 "C99_Parser.l"
+#line 85 "C99_Parser.l"
 { count(); return(OR_ASSIGN); }
 	YY_BREAK
 case 63:
 YY_RULE_SETUP
-#line 85 "C99_Parser.l"
+#line 86 "C99_Parser.l"
 { count(); return(RIGHT_OP); }
 	YY_BREAK
 case 64:
 YY_RULE_SETUP
-#line 86 "C99_Parser.l"
+#line 87 "C99_Parser.l"
 { count(); return(LEFT_OP); }
 	YY_BREAK
 case 65:
 YY_RULE_SETUP
-#line 87 "C99_Parser.l"
+#line 88 "C99_Parser.l"
 { count(); return(INC_OP); }
 	YY_BREAK
 case 66:
 YY_RULE_SETUP
-#line 88 "C99_Parser.l"
+#line 89 "C99_Parser.l"
 { count(); return(DEC_OP); }
 	YY_BREAK
 case 67:
 YY_RULE_SETUP
-#line 89 "C99_Parser.l"
+#line 90 "C99_Parser.l"
 { count(); return(PTR_OP); }
 	YY_BREAK
 case 68:
 YY_RULE_SETUP
-#line 90 "C99_Parser.l"
+#line 91 "C99_Parser.l"
 { count(); return(AND_OP); }
 	YY_BREAK
 case 69:
 YY_RULE_SETUP
-#line 91 "C99_Parser.l"
+#line 92 "C99_Parser.l"
 { count(); return(OR_OP); }
 	YY_BREAK
 case 70:
 YY_RULE_SETUP
-#line 92 "C99_Parser.l"
+#line 93 "C99_Parser.l"
 { count(); return(LE_OP); }
 	YY_BREAK
 case 71:
 YY_RULE_SETUP
-#line 93 "C99_Parser.l"
+#line 94 "C99_Parser.l"
 { count(); return(GE_OP); }
 	YY_BREAK
 case 72:
 YY_RULE_SETUP
-#line 94 "C99_Parser.l"
+#line 95 "C99_Parser.l"
 { count(); return(EQ_OP); }
 	YY_BREAK
 case 73:
 YY_RULE_SETUP
-#line 95 "C99_Parser.l"
+#line 96 "C99_Parser.l"
 { count(); return(NE_OP); }
 	YY_BREAK
 case 74:
 YY_RULE_SETUP
-#line 96 "C99_Parser.l"
+#line 97 "C99_Parser.l"
 { count(); return(';'); }
 	YY_BREAK
 case 75:
 YY_RULE_SETUP
-#line 97 "C99_Parser.l"
+#line 98 "C99_Parser.l"
 { count(); return('{'); }
 	YY_BREAK
 case 76:
 YY_RULE_SETUP
-#line 98 "C99_Parser.l"
+#line 99 "C99_Parser.l"
 { count(); return('}'); }
 	YY_BREAK
 case 77:
 YY_RULE_SETUP
-#line 99 "C99_Parser.l"
+#line 100 "C99_Parser.l"
 { count(); return(','); }
 	YY_BREAK
 case 78:
 YY_RULE_SETUP
-#line 100 "C99_Parser.l"
+#line 101 "C99_Parser.l"
 { count(); return(':'); }
 	YY_BREAK
 case 79:
 YY_RULE_SETUP
-#line 101 "C99_Parser.l"
+#line 102 "C99_Parser.l"
 { count(); return('='); }
 	YY_BREAK
 case 80:
 YY_RULE_SETUP
-#line 102 "C99_Parser.l"
+#line 103 "C99_Parser.l"
 { count(); return('('); }
 	YY_BREAK
 case 81:
 YY_RULE_SETUP
-#line 103 "C99_Parser.l"
+#line 104 "C99_Parser.l"
 { count(); return(')'); }
 	YY_BREAK
 case 82:
 YY_RULE_SETUP
-#line 104 "C99_Parser.l"
+#line 105 "C99_Parser.l"
 { count(); return('['); }
 	YY_BREAK
 case 83:
 YY_RULE_SETUP
-#line 105 "C99_Parser.l"
+#line 106 "C99_Parser.l"
 { count(); return(']'); }
 	YY_BREAK
 case 84:
 YY_RULE_SETUP
-#line 106 "C99_Parser.l"
+#line 107 "C99_Parser.l"
 { count(); return('.'); }
 	YY_BREAK
 case 85:
 YY_RULE_SETUP
-#line 107 "C99_Parser.l"
+#line 108 "C99_Parser.l"
 { count(); return('&'); }
 	YY_BREAK
 case 86:
 YY_RULE_SETUP
-#line 108 "C99_Parser.l"
+#line 109 "C99_Parser.l"
 { count(); return('!'); }
 	YY_BREAK
 case 87:
 YY_RULE_SETUP
-#line 109 "C99_Parser.l"
+#line 110 "C99_Parser.l"
 { count(); return('~'); }
 	YY_BREAK
 case 88:
 YY_RULE_SETUP
-#line 110 "C99_Parser.l"
+#line 111 "C99_Parser.l"
 { count(); return('-'); }
 	YY_BREAK
 case 89:
 YY_RULE_SETUP
-#line 111 "C99_Parser.l"
+#line 112 "C99_Parser.l"
 { count(); return('+'); }
 	YY_BREAK
 case 90:
 YY_RULE_SETUP
-#line 112 "C99_Parser.l"
+#line 113 "C99_Parser.l"
 { count(); return('*'); }
 	YY_BREAK
 case 91:
 YY_RULE_SETUP
-#line 113 "C99_Parser.l"
+#line 114 "C99_Parser.l"
 { count(); return('/'); }
 	YY_BREAK
 case 92:
 YY_RULE_SETUP
-#line 114 "C99_Parser.l"
+#line 115 "C99_Parser.l"
 { count(); return('%'); }
 	YY_BREAK
 case 93:
 YY_RULE_SETUP
-#line 115 "C99_Parser.l"
+#line 116 "C99_Parser.l"
 { count(); return('<'); }
 	YY_BREAK
 case 94:
 YY_RULE_SETUP
-#line 116 "C99_Parser.l"
+#line 117 "C99_Parser.l"
 { count(); return('>'); }
 	YY_BREAK
 case 95:
 YY_RULE_SETUP
-#line 117 "C99_Parser.l"
+#line 118 "C99_Parser.l"
 { count(); return('^'); }
 	YY_BREAK
 case 96:
 YY_RULE_SETUP
-#line 118 "C99_Parser.l"
+#line 119 "C99_Parser.l"
 { count(); return('|'); }
 	YY_BREAK
 case 97:
 YY_RULE_SETUP
-#line 119 "C99_Parser.l"
+#line 120 "C99_Parser.l"
 { count(); return('?'); }
 	YY_BREAK
 case 98:
 /* rule 98 can match eol */
 YY_RULE_SETUP
-#line 121 "C99_Parser.l"
+#line 122 "C99_Parser.l"
 { count(); }
 	YY_BREAK
 case 99:
 YY_RULE_SETUP
-#line 122 "C99_Parser.l"
+#line 123 "C99_Parser.l"
 { /* Add code to complain about unmatched characters */ }
 	YY_BREAK
 case 100:
 YY_RULE_SETUP
-#line 124 "C99_Parser.l"
+#line 125 "C99_Parser.l"
 ECHO;
 	YY_BREAK
-#line 1475 "lex.yy.c"
+#line 1476 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -2472,7 +2473,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 124 "C99_Parser.l"
+#line 125 "C99_Parser.l"
 
 
 
@@ -2528,7 +2529,9 @@ int check_type(void)
 /*
 *	it actually will only return IDENTIFIER
 */
-
+        char* res = malloc(strlen(yytext)+1);
+        strcpy(res, yytext);
+        yylval.sval = res;
 	return IDENTIFIER;
 }
 

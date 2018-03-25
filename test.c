@@ -1,8 +1,10 @@
-struct test1
+typedef struct Type1
 {
   int a;
   int b;
-} var1;
+} Type1;
+
+int var1;
 
 void main()
 {

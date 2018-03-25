@@ -8,6 +8,7 @@ IS                      ((u|U)|(u|U)?(l|L|ll|LL)|(l|L|ll|LL)(u|U))
 
 %{
 #include <stdio.h>
+#include "Declarator.h"
 #include "y.tab.h"
 %}
 
@@ -175,6 +176,8 @@ int check_type(void)
 /*
 *	it actually will only return IDENTIFIER
 */
-
+        char* res = malloc(strlen(yytext)+1);
+        strcpy(res, yytext);
+        yylval.sval = res;
 	return IDENTIFIER;
 }
