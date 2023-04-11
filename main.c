@@ -3,7 +3,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int yyparse();
+#include "y.tab.h"
+
+extern int yyparse();
 
 typedef struct {
   unsigned int length;

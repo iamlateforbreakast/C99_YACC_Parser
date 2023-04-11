@@ -8,9 +8,14 @@ int yylex(void);
 
 %union {
   char* sval;
-};
+}
 
-%type <sval> IDENTIFIER
+%type <sval> function_definition
+%type <sval> translation_unit
+%type <sval> external_declaration
+%type <sval> init_declarator
+%type <sval> declarator
+%type <sval> declaration
 
 %token IDENTIFIER CONSTANT STRING_LITERAL SIZEOF
 %token PTR_OP INC_OP DEC_OP LEFT_OP RIGHT_OP LE_OP GE_OP EQ_OP NE_OP
@@ -184,7 +189,7 @@ declaration_specifiers
 	;
 
 init_declarator_list
-	: init_declarator
+	: init_declarator {printf("\n-->Init declarator matched\n%s\n", $1);}
 	| init_declarator_list ',' init_declarator
 	;
 
@@ -452,13 +457,13 @@ jump_statement
 	;
 
 translation_unit
-	: external_declaration
-	| translation_unit external_declaration
+	: external_declaration {printf("Translation Unit1: %s\n",$1);}
+	| translation_unit external_declaration {printf("-->Translation Unit2: %s\n",$1);}
 	;
 
 external_declaration
-	: function_definition { printf("Function definition\n"); }
-	| declaration { printf("Declaration\n"); }
+	: function_definition { printf("\n-->Function definition\n%s\n",$1); }
+	| declaration
 	;
 
 function_definition

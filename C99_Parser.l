@@ -13,6 +13,7 @@ IS                      ((u|U)|(u|U)?(l|L|ll|LL)|(l|L|ll|LL)(u|U))
 void comment(void);
 int check_type(void);
 void count(void);
+extern void yyerror(char const *s);
 %}
 
 %%
@@ -58,9 +59,9 @@ void count(void);
 "volatile"		{ count(); return(VOLATILE); }
 "while"			{ count(); return(WHILE); }
 
-{L}({L}|{D})*		{ count(); return(check_type()); }
+{L}({L}|{D})*		{ count(); yylval.sval=strdup(yytext); return(check_type()); }
 
-0[xX]{H}+{IS}?		{ count(); return(CONSTANT); }
+0[xX]{H}+{IS}?		{ count(); yylval.sval = "CONST"; return(CONSTANT); }
 0[0-7]*{IS}?		{ count(); return(CONSTANT); }
 [1-9]{D}*{IS}?		{ count(); return(CONSTANT); }
 L?'(\\.|[^\\'\n])+'	{ count(); return(CONSTANT); }
@@ -73,7 +74,7 @@ L?'(\\.|[^\\'\n])+'	{ count(); return(CONSTANT); }
 0[xX]{H}+"."{H}*{P}{FS}?     { count(); return(CONSTANT); }
 
 
-L?\"(\\.|[^\\"\n])*\"	{ count(); return(STRING_LITERAL); }
+L?\"(\\.|[^\\"\n])*\"	{ count(); yylval.sval = "STR"; return(STRING_LITERAL); }
 
 "..."			{ count(); return(ELLIPSIS); }
 ">>="			{ count(); return(RIGHT_ASSIGN); }
@@ -179,6 +180,7 @@ int check_type(void)
 /*
 *	it actually will only return IDENTIFIER
 */
-        Declarator_setName(yytext);
+    //printf("\nIdentifier seen %s\n", yytext);
+    Declarator_setName(yytext);
 	return IDENTIFIER;
 }
