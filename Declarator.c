@@ -1,4 +1,5 @@
 #include "Declarator.h"
+#include <stdlib.h>
 
 Declarator declarator;
 

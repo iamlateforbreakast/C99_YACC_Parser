@@ -10,6 +10,9 @@ IS                      ((u|U)|(u|U)?(l|L|ll|LL)|(l|L|ll|LL)(u|U))
 #include <stdio.h>
 #include "Declarator.h"
 #include "y.tab.h"
+void comment(void);
+int check_type(void);
+void count(void);
 %}
 
 %%
@@ -140,7 +143,7 @@ void comment(void)
 			return;
 		prev = c;
 	}
-	error("unterminated comment");
+	yyerror("unterminated comment");
 }
 
 

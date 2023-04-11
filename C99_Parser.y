@@ -1,5 +1,6 @@
 %{
 #include "Declarator.h"
+#include <stdio.h>
 extern char yytext[];
 void yyerror(const char *s);
 int yylex(void);
@@ -291,7 +292,7 @@ declarator
 
 
 direct_declarator
-	: IDENTIFIER { printf("IDENTIFIER: %s\n", $1);}
+	: IDENTIFIER
 	| '(' declarator ')'
 	| direct_declarator '[' type_qualifier_list assignment_expression ']'
 	| direct_declarator '[' type_qualifier_list ']'
