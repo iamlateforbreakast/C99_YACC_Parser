@@ -1,8 +1,15 @@
 
 
+typedef enum E_DeclarationType
+{
+  E_VARIABLE,
+  E_FUNCTION,
+  E_TYPE
+} DeclarationType;
+
 typedef struct Declarator
 {
-  unsigned int type;
+  DeclarationType type;
   char * name;
   unsigned int state;
 } Declarator;

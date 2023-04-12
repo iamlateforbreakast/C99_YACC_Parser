@@ -5,7 +5,7 @@ Declarator declarator;
 
 void Declarator_init()
 {
-  declarator.type = 0;
+  declarator.type = E_VARIABLE;
   if (declarator.name) 
   {
     free(declarator.name);
