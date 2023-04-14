@@ -184,3 +184,8 @@ int check_type(void)
     Declarator_setName(yytext);
 	return IDENTIFIER;
 }
+
+void scanString(const char * buffer)
+{
+  yy_scan_string(buffer);
+}

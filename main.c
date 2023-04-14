@@ -4,8 +4,12 @@
 #include <stdlib.h>
 
 #include "y.tab.h"
+#include "DeclaratorList.h"
 
 extern int yyparse();
+extern void scanString(const char * buffer);
+
+DeclaratorList declarartorList;
 
 typedef struct {
   unsigned int length;
@@ -47,7 +51,8 @@ int main(int argc, char **argv)
     }
     else
     {
-      yy_scan_string(s->buffer);
+//      yy_scan_string(s->buffer);
+      scanString(s->buffer);
       yyparse();
     }
   }

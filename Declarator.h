@@ -1,5 +1,6 @@
 
-
+#ifndef _DECLARATOR_
+#define _DECLARATOR_
 typedef enum E_DeclarationType
 {
   E_VARIABLE,
@@ -21,3 +22,5 @@ void Declarator_init();
 void Declarator_setState(int state);
 
 void Declarator_setName(char * name);
+
+#endif /* _DECLARATOR_ */
